@@ -12,7 +12,7 @@ import java.util.Enumeration;
 
 /*
  * 添加了@Component注解的类会被标记为bean类 会通过反射创建一个实例存放在map里
- *添加了@Inject的字段默认为需要注入的字段，类自身必须在容器里，通过反射获取所有字段的数组
+ * 添加了@Inject的字段默认为需要注入的字段，类自身必须在容器里，通过反射获取所有字段的数组
  * 遍历数组 如果某个字段标记了inject 则获取字段的属性 根据属性从map里获取值注入
  *
  *
@@ -37,14 +37,14 @@ public class AnnoLoader extends IocLoader {
         Enumeration<URL> urls = Thread.currentThread().getContextClassLoader().getResources(packageName.replaceAll("\\.", "/"));
         //当前路径下有其他文件，调用方法
         while (urls.hasMoreElements()) {
-            System.out.println("开始执行注解加载器");
+            System.out.println("start annotationLoader!");
             addClassByAnnotation(urls.nextElement().getPath(), packageName);
         }
-        System.out.println("注解bean加载完成");
+        System.out.println("annotationLoader complete!");
         //IOC实现， 自动注入
-        System.out.println("开始执行bean注入");
+        System.out.println("start Inject");
         IocUtil.inject();
-        System.out.println("bean注入完成");
+        System.out.println("bean Inject complete");
     }
     //获取指定包路径下实现 Component主键Bean的实例
     private static void addClassByAnnotation(String filePath, String packageName) {
@@ -65,7 +65,7 @@ public class AnnoLoader extends IocLoader {
                             String string = clazz.toString();
                             String s = string.substring(string.lastIndexOf(".") + 1)+".class";
 
-                            System.out.println("加载"+s+"   bean成功");
+                            System.out.println("loader   "+s+"   success!");
                         }
                     }//不是.class，那就是文件夹，传回去继续找
                     else {
