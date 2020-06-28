@@ -5,7 +5,6 @@ import com.vinlen.zxc.ioc.IocLoader;
 import com.vinlen.zxc.ioc.IocUtil;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.net.URL;
 import java.util.Enumeration;
 
@@ -55,17 +54,15 @@ public class AnnoLoader extends IocLoader {
                 for (File f : files) {
                     //得到名称
                     String fileName = f.getName();
-                    //如果是
                     //要么是.class  要么就是文件夹
                     if (f.isFile()) {
                         //是.class的话开启反射 看看是不是标记了注解，是注解的话就加入map集合
-                        Class<?> clazz = Class.forName(packageName + "." + fileName.substring(0, fileName.lastIndexOf(".")));
+                        Class<?> clazz = Class.forName(packageName + "." + fileName.substring(0,fileName.lastIndexOf(".")));
                         if(clazz.isAnnotationPresent(Component.class)) {
                             applicationContext.put(clazz, clazz.newInstance());
-                            String string = clazz.toString();
-                            String s = string.substring(string.lastIndexOf(".") + 1)+".class";
-
-                            System.out.println("加载"+s+"   bean成功");
+                            String classPath = clazz.toString();
+                            String className = classPath.substring(classPath.lastIndexOf(".") + 1)+".class";
+                            System.out.println("加载"+className+"   bean成功");
                         }
                     }//不是.class，那就是文件夹，传回去继续找
                     else {
@@ -79,13 +76,10 @@ public class AnnoLoader extends IocLoader {
     }
     //获取该路径下所遇的class文件和目录
     private static File[] getClassFile(String filePath) {
-        return new File(filePath).listFiles(new FileFilter() {
-            @Override
-            public boolean accept(File file) {
-                //必须满足条件才会放到数组里
-                //必须是文件。 要么是.class  要么是文件夹
-                return file.isFile() && file.getName().endsWith(".class") || file.isDirectory();
-            }
+        return new File(filePath).listFiles(file -> {
+            //必须满足条件才会放到数组里
+            //必须是文件。 要么是.class  要么是文件夹
+            return file.isFile() && file.getName().endsWith(".class") || file.isDirectory();
         });
     }
 }

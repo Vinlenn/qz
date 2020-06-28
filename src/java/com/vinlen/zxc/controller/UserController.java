@@ -8,11 +8,18 @@ import com.vinlen.zxc.service.UserService;
 //将此容器交给ioc 容器管理
 @Component
 public class UserController {
-    //注入属性
-    @Inject
-    private UserService userService;
-    public void getUser(){
-        User user = userService.getUser();
-        System.out.println(user);
-    }
+	//注入属性
+	@Inject
+	private UserService userService;
+	@Inject
+	private User user;
+
+	public void getUser() {
+		User user = userService.getUser();
+		System.out.println(user);
+	}
+
+	public void say() {
+		System.out.println(user.getUserName());
+	}
 }

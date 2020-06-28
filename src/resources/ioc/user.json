@@ -1,0 +1,7 @@
+{
+    "class":"com.vinlen.zxc.bean.User",
+    "filed": {
+        "userName": "admin",
+        "age": 20
+    }
+}
