@@ -1,7 +1,0 @@
-{
-  "class":"com.vinlen.zxc.bean.Animal",
-  "filed": {
-    "name": "tom",
-    "like": "sleep"
-  }
-}

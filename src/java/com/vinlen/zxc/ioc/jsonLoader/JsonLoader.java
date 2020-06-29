@@ -1,10 +1,7 @@
 package com.vinlen.zxc.ioc.jsonLoader;
 
-
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.vinlen.zxc.ioc.IocLoader;
-import com.vinlen.zxc.ioc.IocUtil;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 
@@ -26,7 +23,7 @@ public class JsonLoader extends IocLoader {
     private static void initBean(String packageName) throws Exception{
         Enumeration<URL> urls = Thread.currentThread().getContextClassLoader().getResources(packageName.replaceAll("\\.", "/"));
          while (urls.hasMoreElements()){
-             System.out.println("start JsonLoader");
+             System.out.println("start JsonLoader!");
              addClassByJson(urls.nextElement().getPath(),packageName);
          }
         System.out.println("complete JsonLoader!");

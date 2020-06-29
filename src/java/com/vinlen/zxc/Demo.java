@@ -1,14 +1,23 @@
 package com.vinlen.zxc;
 
-import com.vinlen.zxc.controller.UserController;
-import com.vinlen.zxc.ioc.annotationLoader.AnnoLoader;
+import com.vinlen.zxc.bean.Animal;
+import com.vinlen.zxc.bean.Dog;
+import com.vinlen.zxc.ioc.IocLoader;
 import com.vinlen.zxc.ioc.comboLoader.ComboLoader;
+
 
 
 public class Demo {
 	public static void main(String[] args) {
+	/*	new ComboLoader("ioc","com.vinlen.zxc");
+		Map ioc = AnnoLoader.getIoc();
+		UserController userController = (UserController) ioc.get(UserController.class);
+		userController.say();*/
 		new ComboLoader("ioc","com.vinlen.zxc");
-		UserController userController = (UserController) AnnoLoader.applicationContext.get(UserController.class);
-		userController.say();
+
+		Animal animal=(Animal)IocLoader.applicationContext.get(Dog.class);
+		animal.say();
+
 	}
+
 }

@@ -19,10 +19,8 @@ import java.util.Enumeration;
  *
  * */
 public class AnnoLoader extends IocLoader {
-     private String packageName;
 
     public AnnoLoader(String packageName) {
-        this.packageName = packageName;
         try {
             initBean(packageName);
         } catch (Exception e) {
@@ -36,14 +34,14 @@ public class AnnoLoader extends IocLoader {
         Enumeration<URL> urls = Thread.currentThread().getContextClassLoader().getResources(packageName.replaceAll("\\.", "/"));
         //当前路径下有其他文件，调用方法
         while (urls.hasMoreElements()) {
-            System.out.println("开始执行注解加载器");
+            System.out.println("start annotation loader!");
             addClassByAnnotation(urls.nextElement().getPath(), packageName);
         }
-        System.out.println("注解bean加载完成");
+        System.out.println("load  complete!");
         //IOC实现， 自动注入
-        System.out.println("开始执行bean注入");
+        System.out.println("start bean inject!");
         IocUtil.inject();
-        System.out.println("bean注入完成");
+        System.out.println("bean inject complete!");
     }
     //获取指定包路径下实现 Component主键Bean的实例
     private static void addClassByAnnotation(String filePath, String packageName) {
@@ -62,7 +60,7 @@ public class AnnoLoader extends IocLoader {
                             applicationContext.put(clazz, clazz.newInstance());
                             String classPath = clazz.toString();
                             String className = classPath.substring(classPath.lastIndexOf(".") + 1)+".class";
-                            System.out.println("加载"+className+"   bean成功");
+                            System.out.println("load "+className+"   success!");
                         }
                     }//不是.class，那就是文件夹，传回去继续找
                     else {

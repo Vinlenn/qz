@@ -1,6 +1,5 @@
 package com.vinlen.zxc.ioc.comboLoader;
 
-
 import com.vinlen.zxc.ioc.IocLoader;
 import com.vinlen.zxc.ioc.annotationLoader.AnnoLoader;
 import com.vinlen.zxc.ioc.jsonLoader.JsonLoader;
@@ -28,7 +27,7 @@ public class ComboLoader extends IocLoader {
             new JsonLoader(jsonLoaderPath);
             new AnnoLoader(annoLoaderPath);
         } catch (Exception e) {
-            System.out.println("加载bean失败");
+            System.out.println("load bean fail!");
         }
     }
 }
