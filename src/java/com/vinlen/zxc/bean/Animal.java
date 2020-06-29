@@ -1,5 +1,5 @@
 package com.vinlen.zxc.bean;
 
 public interface Animal {
-	void say();
+	void say(String name);
 }

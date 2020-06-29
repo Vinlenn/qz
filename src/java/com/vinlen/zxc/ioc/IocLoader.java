@@ -1,13 +1,13 @@
 package com.vinlen.zxc.ioc;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import com.vinlen.zxc.Util.IocFactory;
 
-public abstract  class IocLoader {
-    //map就是容器！！！ map的key就bean的类型，value是bean的实例
-    public static final Map<Class<?>, Object> applicationContext = new ConcurrentHashMap<Class<?>, Object>();
-    public static Map getIoc(){
-        return applicationContext;
-    }
+public abstract class IocLoader {
+	//map就是容器！！！ map的key就bean的类型，value是bean的实例
+	protected static final IocFactory applicationContext = new IocFactory();
+
+	public static IocFactory getIoc() {
+		return applicationContext;
+	}
 
 }
