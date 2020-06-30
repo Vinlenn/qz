@@ -4,7 +4,14 @@ package com.vinlen.zxc.aop;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
-//代理类抽象类，需要继承此类并重写接口
+
+/*
+* 代理类抽象类，需要继承此类并重写接口
+*
+*
+*
+*
+*/
 public abstract class MyProxy implements InvocationHandler {
 
 	private Object object;//被代理类
