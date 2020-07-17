@@ -1,8 +1,8 @@
-package com.vinlen.zxc.ioc.comboLoader;
+package com.vinlen.qz.ioc.comboLoader;
 
-import com.vinlen.zxc.ioc.IocLoader;
-import com.vinlen.zxc.ioc.annotationLoader.AnnoLoader;
-import com.vinlen.zxc.ioc.jsonLoader.JsonLoader;
+import com.vinlen.qz.ioc.IocLoader;
+import com.vinlen.qz.ioc.annotationLoader.AnnoLoader;
+import com.vinlen.qz.ioc.jsonLoader.JsonLoader;
 
 /**
  * 组合加载器，从json配置文件或者根据注解进行注入

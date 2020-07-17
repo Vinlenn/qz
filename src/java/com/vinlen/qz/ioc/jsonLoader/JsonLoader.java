@@ -1,7 +1,7 @@
-package com.vinlen.zxc.ioc.jsonLoader;
+package com.vinlen.qz.ioc.jsonLoader;
 
 import com.alibaba.fastjson.JSONObject;
-import com.vinlen.zxc.ioc.IocLoader;
+import com.vinlen.qz.ioc.IocLoader;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;

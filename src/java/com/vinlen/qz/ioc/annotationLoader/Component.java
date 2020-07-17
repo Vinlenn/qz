@@ -1,4 +1,4 @@
-package com.vinlen.zxc.aop;
+package com.vinlen.qz.ioc.annotationLoader;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,6 +7,5 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Aspect {
-	String value();
+public @interface Component {
 }

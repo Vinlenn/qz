@@ -1,4 +1,4 @@
-package com.vinlen.zxc.aop;
+package com.vinlen.qz.aop;
 
 
 import java.lang.reflect.InvocationHandler;
@@ -7,7 +7,7 @@ import java.lang.reflect.Proxy;
 
 /*
 * 代理类抽象类，需要继承此类并重写接口
-*
+* 已使用cglib 代替此类
 *
 *
 *

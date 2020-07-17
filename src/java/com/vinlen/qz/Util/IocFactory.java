@@ -1,4 +1,4 @@
-package com.vinlen.zxc.Util;
+package com.vinlen.qz.Util;
 
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -26,4 +26,5 @@ public class IocFactory extends LinkedHashMap<Class<?>, Object> {
 			this.put(clazz, v);
 		}
 	}
+
 }

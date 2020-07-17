@@ -1,4 +1,4 @@
-package com.vinlen.zxc.aop;
+package com.vinlen.qz.aop;
 
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;

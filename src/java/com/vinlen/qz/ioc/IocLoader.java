@@ -1,6 +1,6 @@
-package com.vinlen.zxc.ioc;
+package com.vinlen.qz.ioc;
 
-import com.vinlen.zxc.Util.IocFactory;
+import com.vinlen.qz.Util.IocFactory;
 
 public abstract class IocLoader {
 	//map就是容器！！！ map的key就bean的类型，value是bean的实例

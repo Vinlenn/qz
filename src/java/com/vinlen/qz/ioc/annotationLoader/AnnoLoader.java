@@ -1,8 +1,8 @@
-package com.vinlen.zxc.ioc.annotationLoader;
+package com.vinlen.qz.ioc.annotationLoader;
 
 
-import com.vinlen.zxc.ioc.IocLoader;
-import com.vinlen.zxc.ioc.IocUtil;
+import com.vinlen.qz.ioc.IocLoader;
+import com.vinlen.qz.ioc.IocUtil;
 
 import java.io.File;
 import java.net.URL;

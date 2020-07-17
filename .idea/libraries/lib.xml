@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/src/java/com/vinlen/zxc/lib" />
+      <root url="file://$PROJECT_DIR$/src/java/com/vinlen/qz/lib" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
-    <jarDirectory url="file://$PROJECT_DIR$/src/java/com/vinlen/zxc/lib" recursive="false" />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/aspectjweaver-1.6.8-sources.jar!/" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/src/java/com/vinlen/qz/lib" recursive="false" />
   </library>
 </component>

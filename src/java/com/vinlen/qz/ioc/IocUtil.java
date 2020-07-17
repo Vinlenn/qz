@@ -1,9 +1,9 @@
-package com.vinlen.zxc.ioc;
+package com.vinlen.qz.ioc;
 
 
-import com.vinlen.zxc.aop.JoinPoint;
-import com.vinlen.zxc.aop.Aspect;
-import com.vinlen.zxc.ioc.annotationLoader.Inject;
+import com.vinlen.qz.aop.JoinPoint;
+import com.vinlen.qz.aop.Aspect;
+import com.vinlen.qz.ioc.annotationLoader.Inject;
 import net.sf.cglib.proxy.Callback;
 import net.sf.cglib.proxy.Enhancer;
 
