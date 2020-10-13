@@ -52,7 +52,7 @@ public class Strings {
 	 * @param s 字符串
 	 * @return 首字母小写后的新字符串
 	 */
-	public static String lowerFirst(CharSequence s) {
+	private static String lowerFirst(CharSequence s) {
 		if (null == s)
 			return null;
 		int len = s.length();
@@ -61,9 +61,8 @@ public class Strings {
 		char c = s.charAt(0);
 		if (Character.isLowerCase(c))
 			return s.toString();
-		return new StringBuilder(len).append(Character.toLowerCase(c))
-				.append(s.subSequence(1, len))
-				.toString();
+		return String.valueOf(Character.toLowerCase(c)) +
+				s.subSequence(1, len);
 	}
 
 
@@ -73,7 +72,7 @@ public class Strings {
 	 * @param s 字符串
 	 * @return 首字母大写后的新字符串
 	 */
-	public static String upperFirst(CharSequence s) {
+	private static String upperFirst(CharSequence s) {
 		if (null == s)
 			return null;
 		int len = s.length();
@@ -82,9 +81,62 @@ public class Strings {
 		char c = s.charAt(0);
 		if (Character.isUpperCase(c))
 			return s.toString();
-		return new StringBuilder(len).append(Character.toUpperCase(c))
-				.append(s.subSequence(1, len))
-				.toString();
+		return String.valueOf(Character.toUpperCase(c)) +
+				s.subSequence(1, len);
+	}
+
+	/**
+	 * 检查两个字符串的忽略大小写后是否相等.
+	 *
+	 * @param s1 字符串A
+	 * @param s2 字符串B
+	 * @return true 如果两个字符串忽略大小写后相等,且两个字符串均不为null
+	 */
+	public static boolean equalsIgnoreCase(String s1, String s2) {
+		return s1 == null ? s2 == null : s1.equalsIgnoreCase(s2);
+	}
+
+	/**
+	 * 检查两个字符串是否相等.
+	 *
+	 * @param s1 字符串A
+	 * @param s2 字符串B
+	 * @return true 如果两个字符串相等,且两个字符串均不为null
+	 */
+	public static boolean equals(String s1, String s2) {
+		return s1 == null ? s2 == null : s1.equals(s2);
+	}
+
+	/**
+	 * 判断字符串是否以特殊字符开头
+	 *
+	 * @param s 字符串
+	 * @param c 特殊字符
+	 * @return 是否以特殊字符开头
+	 */
+	public static boolean startsWithChar(String s, char c) {
+		return null != s && (s.length() != 0 && s.charAt(0) == c);
+	}
+
+	/**
+	 * 判断字符串是否以特殊字符结尾
+	 *
+	 * @param s 字符串
+	 * @param c 特殊字符
+	 * @return 是否以特殊字符结尾
+	 */
+	public static boolean endsWithChar(String s, char c) {
+		return null != s && (s.length() != 0 && s.charAt(s.length() - 1) == c);
+	}
+
+	/**
+	 * 如果此字符串为 null 或者为空串（""），则返回 true
+	 *
+	 * @param cs 字符串
+	 * @return 如果此字符串为 null 或者为空，则返回 true
+	 */
+	public static boolean isEmpty(CharSequence cs) {
+		return null == cs || cs.length() == 0;
 	}
 
 	/*
